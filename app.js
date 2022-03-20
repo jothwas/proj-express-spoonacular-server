@@ -1,8 +1,9 @@
 const express = require("express");
-const { getRecipe, getLanding } = require("./controllers");
+const { getRecipeById, getRandomRecipe } = require("./controllers");
 const app = express();
 app.use(express.json());
 
-app.use("/recipe", getRecipe);
+app.get("/recipe/random", getRandomRecipe);
+app.get("/recipe/:recipe_id", getRecipeById);
 
 module.exports = app;
