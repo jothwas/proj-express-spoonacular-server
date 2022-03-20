@@ -35,5 +35,9 @@ exports.fetchRecipe = async () => {
     instructions,
     summary,
   };
+  recipe.extendedIngredients = recipe.extendedIngredients.map((ingredient) => {
+    const { id, name, amount, unit } = ingredient;
+    return { id, name, amount, unit };
+  });
   return { recipe };
 };
