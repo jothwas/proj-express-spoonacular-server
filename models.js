@@ -1,6 +1,8 @@
 const rp = require("request-promise");
 const fs = require("fs/promises");
 
+require("dotenv").config();
+
 exports.fetchLanding = () => {
   return fs
     .readFile("./landing.json", "utf-8")
